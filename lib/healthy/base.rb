@@ -4,7 +4,7 @@ module Healthy
     # all tools are expected to implement methods info
     module Base    
       def status
-        raise "status is not supported on a tool" unless respond_to?(:passed?)
+        raise 'status is not supported on a tool' unless respond_to?(:passed?)
         return :warn if warning? && passed?
         return :fail unless passed?
         return :pass

@@ -5,94 +5,69 @@
 
 Gem::Specification.new do |s|
   s.name = %q{healthy}
-  s.version = "0.1.1"
+  s.version = '0.1.1'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Matthew Deiters"]
+  s.required_rubygems_version = Gem::Requirement.new('>= 0') if s.respond_to? :required_rubygems_version=
+  s.authors = ['Matthew Deiters']
   s.date = %q{2011-09-01}
   s.default_executable = %q{healthy-web}
   s.description = %q{A rack app for monitoring application health that can be attached to your rails application}
   s.email = %q{mdeiters@gmail.com}
-  s.executables = ["healthy-web"]
+  s.executables = ['healthy-web']
   s.extra_rdoc_files = [
-    "LICENSE.txt",
-    "README.rdoc"
+    'LICENSE.txt',
+    'README.rdoc'
   ]
   s.files = [
-    ".document",
-    ".rspec",
-    "Gemfile",
-    "Gemfile.lock",
-    "LICENSE.txt",
-    "README.rdoc",
-    "Rakefile",
-    "VERSION",
-    "bin/healthy-web",
-    "healthy.gemspec",
-    "lib/healthy.rb",
-    "lib/healthy/base.rb",
-    "lib/healthy/diagnostic.rb",
-    "lib/healthy/disk_space.rb",
-    "lib/healthy/env_check.rb",
-    "lib/healthy/gem_list.rb",
-    "lib/healthy/public/bg_button_a.gif",
-    "lib/healthy/public/bg_button_span.gif",
-    "lib/healthy/public/screen.css",
-    "lib/healthy/revision_deployed.rb",
-    "lib/healthy/router.rb",
-    "lib/healthy/server.rb",
-    "lib/healthy/server_identity.rb",
-    "lib/healthy/views/show.erb",
-    "spec/base_spec.rb",
-    "spec/diagnostic_spec.rb",
-    "spec/router_spec.rb",
-    "spec/server_identity_spec.rb",
-    "spec/spec_helper.rb"
+    '.document',
+    '.rspec',
+    'Gemfile',
+    'Gemfile.lock',
+    'LICENSE.txt',
+    'README.rdoc',
+    'Rakefile',
+    'VERSION',
+    'bin/healthy-web',
+    'healthy.gemspec',
+    'lib/healthy.rb',
+    'lib/healthy/base.rb',
+    'lib/healthy/diagnostic.rb',
+    'lib/healthy/disk_space.rb',
+    'lib/healthy/env_check.rb',
+    'lib/healthy/gem_list.rb',
+    'lib/healthy/public/bg_button_a.gif',
+    'lib/healthy/public/bg_button_span.gif',
+    'lib/healthy/public/screen.css',
+    'lib/healthy/revision_deployed.rb',
+    'lib/healthy/router.rb',
+    'lib/healthy/server.rb',
+    'lib/healthy/server_identity.rb',
+    'lib/healthy/views/show.erb',
+    'spec/base_spec.rb',
+    'spec/diagnostic_spec.rb',
+    'spec/router_spec.rb',
+    'spec/server_identity_spec.rb',
+    'spec/spec_helper.rb'
   ]
   s.homepage = %q{http://github.com/mdeiters/healthy}
-  s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
+  s.licenses = ['MIT']
+  s.require_paths = ['lib']
   s.rubygems_version = %q{1.6.2}
   s.summary = %q{A rack app for monitoring application health that can be attached to your rails application}
   s.test_files = [
-    "spec/base_spec.rb",
-    "spec/diagnostic_spec.rb",
-    "spec/router_spec.rb",
-    "spec/server_identity_spec.rb",
-    "spec/spec_helper.rb"
+    'spec/base_spec.rb',
+    'spec/diagnostic_spec.rb',
+    'spec/router_spec.rb',
+    'spec/server_identity_spec.rb',
+    'spec/spec_helper.rb'
   ]
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
+  s.add_dependency(%q<sinatra>, ['>= 0'])
+  s.add_dependency(%q<bundler>, ['~> 1.7.0'])
+  s.add_development_dependency(%q<rspec>, ['~> 3.2.0'])
+  s.add_development_dependency(%q<jeweler>, ['~> 2.0.0'])
+  s.add_development_dependency(%q<simplecov>, ['>= 0'])
+  s.add_development_dependency(%q<mocha>, ['>= 0'])
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<sinatra>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_development_dependency(%q<mocha>, [">= 0"])
-      s.add_runtime_dependency(%q<sinatra>, [">= 0"])
-      s.add_development_dependency(%q<rspec>, ["> 1.2.3"])
-    else
-      s.add_dependency(%q<sinatra>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["~> 2.3.0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<mocha>, [">= 0"])
-      s.add_dependency(%q<sinatra>, [">= 0"])
-      s.add_dependency(%q<rspec>, ["> 1.2.3"])
-    end
-  else
-    s.add_dependency(%q<sinatra>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["~> 2.3.0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<mocha>, [">= 0"])
-    s.add_dependency(%q<sinatra>, [">= 0"])
-    s.add_dependency(%q<rspec>, ["> 1.2.3"])
-  end
 end
 

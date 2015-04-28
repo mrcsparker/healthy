@@ -7,7 +7,7 @@ module Healthy
     def info
       File.read("#{RAILS_ROOT}/REVISION")
     rescue
-      'Unkown'
+      'Unknown'
     end
   end
 end

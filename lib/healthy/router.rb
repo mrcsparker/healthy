@@ -1,4 +1,6 @@
 require 'singleton'
+require 'pp'
+
 module Healthy
   class Router
     class << self
@@ -19,8 +21,15 @@ module Healthy
       end
       
       def normalized_name(klass)
-        name = klass.respond_to?(:display_name) ? klass.display_name : klass.name
-        name.downcase.gsub(" ", "")
+        name = klass.class.name
+
+        if klass.respond_to?(:display_name)
+          name = klass.display_name
+        elsif klass.respond_to?(:name)
+          name = klass.name
+        end
+
+        name.downcase.gsub(' ', '')
       end
     end
   end

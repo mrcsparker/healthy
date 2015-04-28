@@ -12,7 +12,7 @@ module Healthy
           string_or_method_name
         end
         if identity.nil? || identity.empty?
-          raise ArgumentError, "server identity cannot be nil or empty"
+          raise ArgumentError, 'server identity cannot be nil or empty'
         end
       end
       

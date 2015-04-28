@@ -38,8 +38,8 @@ module Healthy
     
       def monitor(diagnostic)
         @diagnostics ||= []
-        exsisting = @diagnostics.detect{|exsisting| exsisting.name == diagnostic.name }
-        @diagnostics.delete(exsisting) if exsisting
+        existing = @diagnostics.detect{ |existing| extract_name(existing) == extract_name(diagnostic) }
+        @diagnostics.delete(existing) if existing
         @diagnostics << diagnostic
         Router.add_route(diagnostic)
       end
@@ -54,11 +54,11 @@ module Healthy
       end
     
       def checks
-        diagnostics.select{|diagnostic| diagnostic.respond_to?(:passed?) }.sort{|x,y| extract_name(x) <=> extract_name(y)}
+        diagnostics.select{ |diagnostic| diagnostic.respond_to?(:passed?) }.sort{|x,y| extract_name(x) <=> extract_name(y)}
       end    
     
       def tools
-        diagnostics.select{|diagnostic| !diagnostic.respond_to?(:passed?) }.sort{|x,y| extract_name(x) <=> extract_name(y)}
+        diagnostics.select{ |diagnostic| !diagnostic.respond_to?(:passed?) }.sort{|x,y| extract_name(x) <=> extract_name(y)}
       end
       
       def extract_name(obj)

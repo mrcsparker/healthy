@@ -4,7 +4,7 @@ begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
   $stderr.puts e.message
-  $stderr.puts "Run `bundle install` to install missing gems"
+  $stderr.puts 'Run `bundle install` to install missing gems'
   exit e.status_code
 end
 require 'rake'
@@ -12,13 +12,13 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "healthy"
-  gem.homepage = "http://github.com/mdeiters/healthy"
-  gem.license = "MIT"
-  gem.summary = %Q{A rack app for monitoring application health that can be attached to your rails application}
-  gem.description = %Q{A rack app for monitoring application health that can be attached to your rails application}
-  gem.email = "mdeiters@gmail.com"
-  gem.authors = ["Matthew Deiters"]
+  gem.name = 'healthy'
+  gem.homepage = 'http://github.com/mdeiters/healthy'
+  gem.license = 'MIT'
+  gem.summary = 'A rack app for monitoring application health that can be attached to your rails application'
+  gem.description = 'A rack app for monitoring application health that can be attached to your rails application'
+  gem.email = 'mdeiters@gmail.com'
+  gem.authors = ['Matthew Deiters']
   gem.add_runtime_dependency 'sinatra'
   gem.add_development_dependency 'rspec', '> 1.2.3'
 end
@@ -39,7 +39,7 @@ task :default => :spec
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+  version = File.exist?('VERSION') ? File.read('VERSION') : ''
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "healthy #{version}"

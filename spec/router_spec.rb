@@ -1,11 +1,11 @@
-require 'spec/spec_helper'
+require 'spec_helper'
 
 class WarholCheck
 end
 
 class DuchampCheck
   def self.display_name
-    "Moustache Check"
+    'Moustache Check'
   end
 end
 
@@ -15,21 +15,21 @@ module Healthy
       Diagnostic.flush_diagnostics!
     end
     
-    describe ".add" do
-      it "should convert they given key/value pair" do
+    describe '.add' do
+      it 'should convert they given key/value pair' do
         Router.add({
-          WarholCheck => ["localhost:3000"],
-          DuchampCheck => ["localhost:3001"]
+          WarholCheck => ['localhost:3000'],
+          DuchampCheck => ['localhost:3001']
         })
         
         Router.routes.should == {
-          "warholcheck" => {
-            :servers => ["localhost:3000"],
-            :klass   => WarholCheck
+          'warholcheck' => {
+              servers: ['localhost:3000'],
+              klass: WarholCheck
           },
-          "moustachecheck" => {
-            :servers => ["localhost:3001"],
-            :klass   => DuchampCheck
+          'moustachecheck' => {
+              servers: ['localhost:3001'],
+              klass: DuchampCheck
           }
         }
       end
