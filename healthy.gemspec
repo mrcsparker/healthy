@@ -63,7 +63,7 @@ Gem::Specification.new do |s|
   ]
 
   s.add_dependency(%q<sinatra>, ['>= 0'])
-  s.add_dependency(%q<bundler>, ['~> 1.7.0'])
+  s.add_dependency(%q<bundler>, ['~> 1.9.0'])
   s.add_development_dependency(%q<rspec>, ['~> 3.2.0'])
   s.add_development_dependency(%q<jeweler>, ['~> 2.0.0'])
   s.add_development_dependency(%q<simplecov>, ['>= 0'])
